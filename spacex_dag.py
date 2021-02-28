@@ -17,7 +17,7 @@ default_args = {
 dag = DAG("spacex", default_args=default_args, schedule_interval="0 0 1 1 *")
 for rocket in ("all","falcon1","falcon9","falconheavy"):
     if rocket == "all":
-        rocket_load == ''
+        rocket_load = ''
     else:
         rocket_load = '-r ' + rocket   
     t1 = BashOperator(
