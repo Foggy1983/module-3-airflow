@@ -20,7 +20,8 @@ for rocket in ("all","falcon1","falcon9","falconheavy"):
         rocket ==''
     t1 = BashOperator(
         task_id="get_data" + rocket, 
-        bash_command="python3 /root/airflow/dags/spacex/load_launches.py -r {{rocket}} -y {{ execution_date.year }} -o /var/data", 
+        bash_command="python3 /root/airflow/dags/spacex/load_launches.py -r {{params.rocket}} -y {{ execution_date.year }} -o /var/data", 
+        params={"rocket": rocket},
         dag=dag
     )
     if rocket == '':
