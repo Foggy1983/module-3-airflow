@@ -16,7 +16,7 @@ default_args = {
 }
 
 dag = DAG(
-    'git_sync',
+    'git_sync1',
     default_args=default_args,
     description='A simple tutorial DAG',
     schedule_interval=timedelta(seconds=60),
